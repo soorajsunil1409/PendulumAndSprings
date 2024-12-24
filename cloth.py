@@ -14,11 +14,6 @@ springs = []
 
 selected_particle = None
 
-GRID_SIZE = 50  # Grid cell size for spatial partitioning
-
-# Grid dictionary to store particles by their grid cell index
-grid = {}
-
 def make_spring(par1: Particle, par2: Particle):
     s = Spring(par1, par2, (par1.pos - par2.pos).length(), 3, 1.5)
     springs.append(s)
