@@ -59,7 +59,8 @@ class Spring:
     def update(self):
         direction = (self.p2.pos - self.p1.pos)
         curr_dist = direction.length()
-        direction = direction.normalize()
+        if curr_dist != 0: direction = direction.normalize()
+        else: direction = pygame.Vector2(2, 2)
 
         spring_force = direction * self.k * (curr_dist - self.length)
 
